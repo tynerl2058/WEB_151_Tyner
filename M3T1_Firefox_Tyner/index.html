@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+  </head>
+  <body>
+    
+	<h1> 
+		Hello
+	</h1>
+	
+	<img src="images/firefox2.png" alt="My test image">
+	
+	<button>
+		Change name
+	</button>
+
+	<script>
+		var myButton = document.querySelector('button');
+		var myHeading = document.querySelector('h1');
+		function setUserName() {
+		  var myName = prompt('Layton Tyner.');
+		  localStorage.setItem('name', myName);
+		  myHeading.textContent = 'Mozilla is cool, ' + myName;
+		}
+		if(!localStorage.getItem('name')) {
+		  setUserName();
+		} else {
+		  var storedName = localStorage.getItem('name');
+		  myHeading.textContent = 'Mozilla is cool, ' + storedName;
+		}
+		myButton.onclick = function() {
+		  setUserName();
+		}
+	</script>
+	
+ </body>
+</html>
